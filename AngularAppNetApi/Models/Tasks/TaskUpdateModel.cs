@@ -1,3 +1,5 @@
+using System;
+
 namespace AngularAppNetApi.Models.Tasks
 {
     public class TaskUpdateModel

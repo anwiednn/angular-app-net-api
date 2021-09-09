@@ -1,4 +1,5 @@
 ﻿using AngularAppNetApi.Services;
+using AngularAppNetApi.Models.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using Microsoft.Extensions.Logging;
 namespace AngularAppNetApi.Controllers
 {
     [ApiController]
-    public class v : ControllerBase
+    public class TaskController : ControllerBase
     {
         private readonly ILogger<TaskController> _logger;
         private readonly ITaskService _taskService;
@@ -22,47 +23,53 @@ namespace AngularAppNetApi.Controllers
             _taskService = taskService;
         }
 
-        [HttpPost("api/tasks/create"))]
+        [HttpPost("api/tasks/create")]
         public Task<int> CreateTaskAsync([FromBody] TaskCreateModel createModel)
         {
             // Verify user exists (active?)
 
-            return _taskService.CreateTaskAsync(createModel);
+            return null;
+            //return _taskService.CreateTaskAsync(createModel);
         }
 
-        [HttpGet("api/tasks/create/view"))]
+        [HttpGet("api/tasks/create/view")]
         public Task<TaskCreateViewModel> GetTaskCreateViewAsync()
         {
-            return _taskService.GetTaskCreateViewAsync(id);
+            return null;
+            //return _taskService.GetTaskCreateViewAsync();
         }
 
-        [HttpGet("api/tasks/{id:int}/detail"))]
+        [HttpGet("api/tasks/{id:int}/detail")]
         public Task<TaskDetailViewModel> GetTaskDetailViewAsync(int id)
         {
             // Verify task exists
 
-            return _taskService.GetTaskDetailViewAsync(id);
+            return null;
+            //return _taskService.GetTaskDetailViewAsync(id);
         }
 
-        [HttpGet("api/tasks/index"))]
+        [HttpGet("api/tasks/index")]
         public Task<TaskIndexViewModel> GetTaskIndexViewAsync()
         {
-            return _taskService.GetTaskIndexViewAsync();
+            return null;
+            //return _taskService.GetTaskIndexViewAsync();
         }
 
-        [HttpPost("api/tasks/index/page"))]
+        [HttpPost("api/tasks/index/page")]
         public Task<TaskIndexViewModel.PageModel> GetTaskIndexViewPageAsync([FromBody] TaskIndexViewModel.PredicateModel predicateModel)
         {
-            return _taskService.GetTaskIndexViewPageAsync(predicateModel);
+            return null;
+            //return _taskService.GetTaskIndexViewPageAsync(predicateModel);
         }
 
-        [HttpPut("api/tasks/{id:int}"))]
+        [HttpPut("api/tasks/{id:int}")]
         public Task UpdateTaskAsync(int id, [FromBody] TaskUpdateModel updateModel)
         {
             // Verify task exists
             // Verify user exists (and active?)
 
-            return _taskService.UpdateTaskAsync(updateModel);
+            return null;
+            //return _taskService.UpdateTaskAsync(updateModel);
         }
     }
 }

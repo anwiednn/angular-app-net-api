@@ -1,4 +1,5 @@
 ﻿using AngularAppNetApi.Services;
+using AngularAppNetApi.Models.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,55 +23,62 @@ namespace AngularAppNetApi.Controllers
             _userService = userService;
         }
 
-        [HttpGet("api/users/check-email-available"))]
+        [HttpGet("api/users/check-email-available")]
         public Task<bool> CheckEmaiAvailableAsync(int? id, string email)
         {
-            return _userService.CheckEmaiAvailableAsync(id, email);
+            return null;
+            //return _userService.CheckEmaiAvailableAsync(id, email);
         }
 
-        [HttpPost("api/users/create"))]
+        [HttpPost("api/users/create")]
         public Task<int> CreateUserAsync([FromBody] UserCreateModel createModel)
         {
             // Verify user email available
 
-            return _userService.CreateUserAsync(createModel);
+            return null;
+            //return _userService.CreateUserAsync(createModel);
         }
 
-        [HttpGet("api/users/{id:int}/detail"))]
+        [HttpGet("api/users/{id:int}/detail")]
         public Task<UserDetailViewModel> GetUserDetailViewAsync(int id)
         {
             // Verify user exists
 
-            return _userService.GetUserDetailViewAsync(id);
+            return null;
+            //return _userService.GetUserDetailViewAsync(id);
         }
 
-        [HttpGet("api/users/index"))]
+        [HttpGet("api/users/index")]
         public Task<UserIndexViewModel> GetUserIndexViewAsync()
         {
-            return _userService.GetUserIndexViewAsync();
+            return null;
+            //return _userService.GetUserIndexViewAsync();
         }
 
-        [HttpPost("api/users/index/page"))]
+        [HttpPost("api/users/index/page")]
         public Task<UserIndexViewModel.PageModel> GetUserIndexViewPageAsync([FromBody] UserIndexViewModel.PredicateModel predicateModel)
         {
-            return _userService.GetUserIndexViewPageAsync(predicateModel);
+            return null;
+            //return _userService.GetUserIndexViewPageAsync(predicateModel);
         }
 
-        [HttpDelete("api/users/{id:int}"))]
+        [HttpDelete("api/users/{id:int}")]
         public Task DeleteUserAsync(int id)
         {
             // Verify user exists
 
-            return _userService.GetUserIndexViewPageAsync(predicateModel);
+            return null;
+            //return _userService.GetUserIndexViewPageAsync(predicateModel);
         }
 
-        [HttpPut("api/users/{id:int}"))]
+        [HttpPut("api/users/{id:int}")]
         public Task UpdateUserAsync(int id, [FromBody] UserUpdateModel updateModel)
         {
             // Verify user exists
             // Verify user email available
 
-            return _userService.UpdateUserAsync(updateModel);
+            return null;
+            //return _userService.UpdateUserAsync(updateModel);
         }
     }
 }
