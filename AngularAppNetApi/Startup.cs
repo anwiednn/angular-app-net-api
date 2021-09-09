@@ -1,3 +1,4 @@
+using AngularAppNetApi.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,9 @@ namespace AngularAppNetApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddSingleton<ITaskService, TaskService>();
+            services.AddSingleton<IUserService, UserService>();
             // services.AddSwaggerGen(c =>
             // {
             //     c.SwaggerDoc("v1", new OpenApiInfo { Title = "AngularAppNetApi", Version = "v1" });
